@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,9 +13,7 @@ import java.util.List;
  * @author alece
  */
 public class Dueño extends Usuario implements GenerarInforme{
-
     
-    private Integer dueId;
     private List<Mascota> mascotas;
     private List<Factura> facturas;
 
@@ -23,24 +22,21 @@ public class Dueño extends Usuario implements GenerarInforme{
     }
     
     
-    public Dueño(int id,int cedula, String nombre, String apellido1, String apellido2, 
-            String direccion, List<Integer> telefonos, List<Mascota> mascotas, 
+    public Dueño(int cedula, String nombre, String apellido1, String apellido2, 
+            String direccion, List<Integer> telefonos, 
             List<Factura> facturas) {
         
         super(cedula, nombre, apellido1, apellido2, direccion, telefonos);
-        this.dueId = id;
         this.facturas = facturas;
-        this.mascotas = mascotas;
+        this.mascotas = new ArrayList<Mascota>();
     }
-    public Integer getDueId() {
-        return dueId;
-    }
-
-    public void setDueId(Integer dueId) {
-        this.dueId = dueId;
-    }
+    
     public List<Mascota> getMascotas() {
         return mascotas;
+    }
+    
+    public void agregarMascota(Mascota mascota){
+        this.mascotas.add(mascota);
     }
 
     public void setMascotas(List<Mascota> mascotas) {
@@ -53,6 +49,10 @@ public class Dueño extends Usuario implements GenerarInforme{
 
     public void setFacturas(List<Factura> facturas) {
         this.facturas = facturas;
+    }
+    
+    public void agregarFactura(Factura factura){
+        this.facturas.add(factura);
     }
 
     @Override

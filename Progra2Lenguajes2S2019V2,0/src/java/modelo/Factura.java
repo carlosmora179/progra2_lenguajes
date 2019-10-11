@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @author alece
  */
 public class Factura implements GenerarInforme{
+    private Integer idFactura;
     private Date fechaFactura;
     private Servicio servicio;
     private List<Compra> compras;
@@ -21,13 +23,23 @@ public class Factura implements GenerarInforme{
     public Factura() {
     }
 
-    public Factura(Date fechaFactura, Servicio servicio, List<Compra> compras, Tienda tienda) {
+    public Factura(Integer idFactura, Date fechaFactura, Servicio servicio, List<Compra> compras, Tienda tienda) {
+        this.idFactura = idFactura;
         this.fechaFactura = fechaFactura;
         this.servicio = servicio;
         this.compras = compras;
         this.tienda = tienda;
     }
 
+    public Integer getIdFactura() {
+        return idFactura;
+    }
+
+    public void setIdFactura(Integer idFactura) {
+        this.idFactura = idFactura;
+    }
+
+    
     public Date getFechaFactura() {
         return fechaFactura;
     }
@@ -50,6 +62,13 @@ public class Factura implements GenerarInforme{
 
     public void setCompras(List<Compra> compras) {
         this.compras = compras;
+    }
+    
+    public void agregarCompra(Compra compra){
+        if(this.compras == null){
+            this.compras = new ArrayList<>();
+        }
+        this.compras.add(compra);
     }
 
     public Tienda getTienda() {

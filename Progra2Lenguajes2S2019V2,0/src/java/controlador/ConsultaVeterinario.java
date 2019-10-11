@@ -10,6 +10,7 @@ import modelo.Veterinario;
 import static controlador.ConexionDB.Consulta;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -21,6 +22,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Horario;
+import modelo.Mascota;
 
 /**
  *
@@ -117,11 +120,22 @@ public class ConsultaVeterinario extends HttpServlet {
         return lista;
     }
     
+    public List<String> obtenerDiasSemana(String dias){
+        List<String> lista = new ArrayList<>();
+        String[] parseados = dias.split(",");
+        
+        for(int x = 0; x < parseados.length; x++){
+            lista.add(parseados[x]);
+        }
+        
+        return lista;
+    }
+    
     public List<Veterinario> consultaGeneral(){
-        List<Veterinario> veterinarios = new ArrayList<Veterinario>();
+        List<Veterinario> veterinarios = new ArrayList<>();
         ConexionDB cn = new ConexionDB("root","123456");
         ResultSet rs2 = Consulta(cn,"select * from Veterinario");
-        veterinarios.clear();
+        
         try {
             while(rs2.next()){
                 Veterinario tempo = new Veterinario(rs2.getInt("cedula"), rs2.getString("nombre"), 
@@ -140,4 +154,67 @@ public class ConsultaVeterinario extends HttpServlet {
         return veterinarios;
     }
     
+        public List<Mascota> consultaVeterinarioMascotas(Integer id) throws SQLException{
+        List<Mascota> mascotas = new ArrayList<>();
+        ConexionDB cn = new ConexionDB("root","123456");
+        ResultSet rs2 = Consulta(cn,"Select * from Veterinario v inner join Tratamiento t\n" +
+        "on v.idVeterinario = t.Veterinario_idVeterinario inner join Expediente e\n" +
+        "on t.Expediente_idExpediente = e.idExpediente inner join Mascota m\n" +
+        "on e.idExpediente = m.Expediente_idExpediente;");
+        
+        try {
+            while(rs2.next()){
+                
+                if(id.equals(rs2.getInt("cedula"))){
+                    Mascota tempo = new Mascota(rs2.getInt("idMascota"), rs2.getString("tipoMascota"), 
+                            rs2.getString(18), rs2.getDate("fechaNacimiento"), null);
+                    
+                    if(mascotas.isEmpty()){
+                        mascotas.add(tempo);
+                    
+                    }else{
+                        boolean bandera = false;
+                        for(int x = 0; x < mascotas.size(); x++){
+                            if(mascotas.get(x).getIdMascota().equals(rs2.getInt("idMascota"))){
+                                bandera = true;
+                            }
+                        }
+                        
+                        if(!bandera){
+                            mascotas.add(tempo);
+                        }
+                    }
+                
+                }
+
+            }
+            cn.con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return mascotas;
+    }
+        
+public boolean borrarVeterinario(Integer id){
+        ConexionDB cn = new ConexionDB("root","123456");
+        System.out.println(id);
+        PreparedStatement pst;
+        String sql = "delete from Veterinario where cedula = ?;";
+        boolean confirmacion = false;
+        try {
+            
+            pst = cn.con.prepareStatement(sql);
+            pst.setInt(1, id);
+            pst.execute();
+            pst.close();
+            cn.con.close();
+            confirmacion = true;
+        } catch (SQLException ex) {
+            
+            Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
+            confirmacion = false;
+        }
+        
+        return confirmacion;
+    }
 }

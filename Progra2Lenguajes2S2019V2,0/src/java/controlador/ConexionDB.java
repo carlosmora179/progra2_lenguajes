@@ -7,6 +7,7 @@ package controlador;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -32,7 +33,6 @@ public class ConexionDB {
         try {
             st = conex.con.createStatement();
             rs = st.executeQuery(consulta);
-            
             resultado = rs;
             
             
@@ -42,36 +42,24 @@ public class ConexionDB {
         return resultado;
         
     }
-    public static void Insert(ConexionDB conex,String consulta){
+    
+    public static boolean Borrar(ConexionDB conex,String consulta){
         
         Statement st;
-        
-        
+        boolean resultado = false;
         try {
             st = conex.con.createStatement();
-            st.executeUpdate(consulta);
-            
-            
+            resultado = st.execute(consulta);
             
             
         } catch (SQLException ex) {
             Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        return resultado;
         
     }
-    public static void main(String[] args){
-        ConexionDB cn = new ConexionDB("root","123456");
-        ResultSet rs2 = Consulta(cn,"select * from Veterinario");
-        
-        try {
-            while(rs2.next()){
-                System.out.println(rs2.getInt("cedula")+" "+rs2.getString("nombre")+" "+rs2.getString("apellido1")+" "+rs2.getString("especialidades"));
-            }
-            cn.con.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+
+    PreparedStatement prepareStatement(String sql) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -31,20 +31,21 @@
             <ul>
                 <li><a href="index.jsp">Inicio</a></li>
                 <li><a href="mascotas.jsp">Mascotas</a></li>
-                <li><a href="#">Facturas</a></li>
-                <li><a href="#">Tienda</a></li>
+                <li><a href="facturas.jsp">Facturas</a></li>
+                <li><a href="tienda.jsp">Tienda</a></li>
                 <li><a href="veterinarios.jsp">Veterinarios</a></li>
                 <li><a href="#">Acerca de nosotros</a></li>
             </ul>
         </div>
         
         <h1>Seleccione una opción:</h1>
+        <button type="text" class="btn btn-primary mb-2">Agregar Veterinario</button>
         <button type="text" class="btn btn-primary mb-2" 
-                            onclick="window.location='agregarVeterinario.jsp'">Agregar Veterinario</button>
-        
+                onclick="window.location='consultaVeterinario.jsp'">Consultar Veterinarios</button>
         <button type="text" class="btn btn-primary mb-2" 
-                onclick="window.location='consultarVeterinarios.jsp'">Consultar Veterinarios</button>
-        <button type="text" class="btn btn-primary mb-2">Eliminar Veterinario</button>
+                onclick="window.location='consultaMascotaVeterinario.jsp'">Mascotas Atendidas por Veterinario</button>
+        <button type="text" class="btn btn-primary mb-2"
+                onclick="window.location='borrarVeterinario.jsp'">Eliminar Veterinario</button>
         <button type="text" class="btn btn-primary mb-2">Actualizar Información Veterinario</button>
         
 

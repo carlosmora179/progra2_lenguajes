@@ -15,22 +15,21 @@
             <img class="mediana" src="imagenes/logo_transparent.png" alt=""/>
             </h1>
         </div>
-        
+
         
             
         <div id="container">
                 
             <ul>
-                <li><a href="#">Inicio</a></li>
+                <li><a href="index.jsp">Inicio</a></li>
                 <li><a href="mascotas.jsp">Mascotas</a></li>
-                <li><a href="consultarVentas.jsp">Facturas</a></li>
-                <li><a href="#">Tienda</a></li>
+                <li><a href="facturas.jsp">Facturas</a></li>
+                <li><a href="tienda.jsp">Tienda</a></li>
                 <li><a href="veterinarios.jsp">Veterinarios</a></li>
                 <li><a href="#">Acerca de nosotros</a></li>
-                <li><a href="plantilla.jsp">plantilla</a></li>
             </ul>
         </div>
-        <%=request.getParameter("msg")%>
+        
         <div class="slider">
 		<ul>
                     <li>
