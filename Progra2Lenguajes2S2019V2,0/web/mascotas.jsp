@@ -33,7 +33,9 @@
         </div>
         
         <h1>Seleccione una opción:</h1>
-        <button type="text" class="btn btn-primary mb-2">Agregar Mascota</button>
+        
+        <button type="text" class="btn btn-primary mb-2" 
+                onclick="window.location='agregarMascota.jsp'">Agregar Mascota</button>
         <button type="text" class="btn btn-primary mb-2" 
                 onclick="window.location='consultarMascotas.jsp'">Consultar Mascotas</button>
         <button type="text" class="btn btn-primary mb-2">Eliminar Mascota</button>

@@ -150,7 +150,7 @@
 <script>
     
     insertarFila('<%=toInsert%>');
-("tabla_horarios").find("tbody").empty();</script>   
+</script>   
   </tbody>
   <!-- Table body -->
 </table>

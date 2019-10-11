@@ -46,24 +46,39 @@
                     <br>
                 <div class="form-group mb-2 row">
                     
-                    <label> Hora de entrada: </label>
+                    <label>Cédula del dueño:</label>
                     
                     &nbsp;
                     
-                    <input  type="text" name="hentrada">
+                    <input  type="text" name="duecedula">
                     </div>
                     <div class="form-group mb-2 row">
-                    <label>Hora de salida: </label>
+                    <label>Nombre del dueño: </label>
                     &nbsp;
-                    <input type="text" name="hsalida">
+                    <input type="text" name="duenombre">
                     </div>
                     <div class="form-group mb-2 row">
-                    <label>Dias de la semana: </label>
+                    <label>Apellido 1 del dueño: </label>
                     &nbsp;
-                    <input type="text" name="hdias">
+                    <input type="text" name="dueapll1">
+                    </div>
+                    <div class="form-group mb-2 row">
+                    <label>Apellido 2 del dueño: </label>
+                    &nbsp;
+                    <input type="text" name="dueapll2">
+                    </div>
+                    <div class="form-group mb-2 row">
+                    <label>Dirección del dueño: </label>
+                    &nbsp;
+                    <input type="text" name="duedirec">
+                    </div>
+                    <div class="form-group mb-2 row">
+                    <label>Telefonos del dueño: </label>
+                    &nbsp;
+                    <input type="text" name="duetelefonos">
                     </div>
                     
-                <button  type="submit" name="hagregar" class="btn btn-primary mb-2" value="agregar" >Agregar</button>
+                <button  type="submit" name="dueagregar" class="btn btn-primary mb-2" value="agregar" >Agregar</button>
             
                 
         
@@ -75,4 +90,3 @@
     </body>
         
 </html>
-
