@@ -3,15 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/carlo/Documents/NetBeansProjects/Progra2Lenguajes2S2019V2,0/src/java/controlador/srvController.java</file>
-            <file>file:/C:/Users/carlo/Documents/NetBeansProjects/Progra2Lenguajes2S2019V2,0/web/consultaMultipleVeterinario.jsp</file>
-            <file>file:/C:/Users/carlo/Documents/NetBeansProjects/Progra2Lenguajes2S2019V2,0/src/java/modelo/Horario.java</file>
-            <file>file:/C:/Users/carlo/Documents/NetBeansProjects/Progra2Lenguajes2S2019V2,0/src/java/controlador/ConsultaHorario.java</file>
-            <file>file:/C:/Users/carlo/Documents/NetBeansProjects/Progra2Lenguajes2S2019V2,0/web/index.jsp</file>
-            <file>file:/C:/Users/carlo/Documents/NetBeansProjects/Progra2Lenguajes2S2019V2,0/web/agregarHorario.jsp</file>
-            <file>file:/C:/Users/carlo/Documents/NetBeansProjects/Progra2Lenguajes2S2019V2,0/web/vista/estilo.css</file>
-            <file>file:/C:/Users/carlo/Documents/NetBeansProjects/Progra2Lenguajes2S2019V2,0/src/java/controlador/ConsultaVeterinario.java</file>
-            <file>file:/C:/Users/carlo/Documents/NetBeansProjects/Progra2Lenguajes2S2019V2,0/src/java/controlador/ConexionDB.java</file>
+            <file>file:/C:/Users/alece/OneDrive/Documentos/NetBeansProjects/Progra2Lenguajes2S2019/web/consultaMascotaVeterinario.jsp</file>
+            <file>file:/C:/Users/alece/OneDrive/Documentos/NetBeansProjects/Progra2Lenguajes2S2019/src/java/controlador/ConsultaMascota.java</file>
+            <file>file:/C:/Users/alece/OneDrive/Documentos/NetBeansProjects/Progra2Lenguajes2S2019/web/consultaMultipleMascota.jsp</file>
+            <file>file:/C:/Users/alece/OneDrive/Documentos/NetBeansProjects/Progra2Lenguajes2S2019/web/ResultadoMascotaVeterinario.jsp</file>
+            <file>file:/C:/Users/alece/OneDrive/Documentos/NetBeansProjects/Progra2Lenguajes2S2019/web/veterinarios.jsp</file>
+            <file>file:/C:/Users/alece/OneDrive/Documentos/NetBeansProjects/Progra2Lenguajes2S2019/src/java/modelo/Mascota.java</file>
+            <file>file:/C:/Users/alece/OneDrive/Documentos/NetBeansProjects/Progra2Lenguajes2S2019/src/java/controlador/ConsultaVeterinario.java</file>
+            <file>file:/C:/Users/alece/OneDrive/Documentos/NetBeansProjects/Progra2Lenguajes2S2019/src/java/modelo/Veterinario.java</file>
+            <file>file:/C:/Users/alece/OneDrive/Documentos/NetBeansProjects/Progra2Lenguajes2S2019/src/java/modelo/Tratamiento.java</file>
+            <file>file:/C:/Users/alece/OneDrive/Documentos/NetBeansProjects/Progra2Lenguajes2S2019/src/java/modelo/Expediente.java</file>
         </group>
     </open-files>
 </project-private>

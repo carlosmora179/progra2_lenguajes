@@ -83,7 +83,7 @@ public abstract class Usuario {
         String resultado = "";
         
         for(int x = 0; x < this.telefonos.size(); x++){
-            resultado += Integer.toString(this.telefonos.get(x)) + '|';
+            resultado = Integer.toString(this.telefonos.get(x)) + '|';
         }
         return resultado;
     }

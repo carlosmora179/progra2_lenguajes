@@ -7,10 +7,6 @@ package modelo;
 
 import java.util.Date;
 
-/**
- *
- * @author alece
- */
 public class Mascota implements GenerarInforme{
     private Integer idMascota;
     private String tipoMascota;
@@ -46,11 +42,11 @@ public class Mascota implements GenerarInforme{
         this.tipoMascota = tipoMascota;
     }
 
-    public String getNombre() {
+    public String getNombreMascota() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombreMascota(String nombre) {
         this.nombre = nombre;
     }
 
@@ -70,12 +66,20 @@ public class Mascota implements GenerarInforme{
         this.expediente = expediente;
     }   
 
+    
+    @Override
+     public String toString() {
+        String resultado = "";
+        resultado = Integer.toString(this.getIdMascota()) + '-' + this.getTipoMascota() +
+                '-' + this.getNombreMascota() + '-' + this.getFechaNacimiento().toString().replace('-', '/');
+        return resultado;
+    }
+     
     @Override
     public String generarInforme() {
         String resultado = "";
-        resultado = Integer.toString(this.getIdMascota()) + '-' + this.getNombre() +
-                '-' + this.getTipoMascota() + '-' + this.getFechaNacimiento().toString()
-                + '-' + this.getExpediente().toString();
+        resultado = Integer.toString(this.getIdMascota()) + '-' + this.getTipoMascota() +
+                '-' + this.getNombreMascota() + '-' + this.getFechaNacimiento().toString();
         return resultado;
     }
 }

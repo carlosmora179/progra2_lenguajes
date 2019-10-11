@@ -22,10 +22,10 @@
                 
             <ul>
                 <li><a href="index.jsp">Inicio</a></li>
-                <li><a href="#">Mascotas</a></li>
-                <li><a href="#">Facturas</a></li>
-                <li><a href="#">Tienda</a></li>
-                <li><a href="#">Veterinarios</a></li>
+                <li><a href="mascotas.jsp">Mascotas</a></li>
+                <li><a href="facturas.jsp">Facturas</a></li>
+                <li><a href="tienda.jsp">Tienda</a></li>
+                <li><a href="veterinarios.jsp">Veterinarios</a></li>
                 <li><a href="#">Acerca de nosotros</a></li>
             </ul>
         </div>
