@@ -8,6 +8,10 @@
         <servlet-name>ConsultaHorario</servlet-name>
         <servlet-class>controlador.ConsultaHorario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConsultaDuenios</servlet-name>
+        <servlet-class>controlador.ConsultaDuenios</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>srvController</servlet-name>
         <url-pattern>/srvController</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>ConsultaHorario</servlet-name>
         <url-pattern>/ConsultaHorario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultaDuenios</servlet-name>
+        <url-pattern>/ConsultaDuenios</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

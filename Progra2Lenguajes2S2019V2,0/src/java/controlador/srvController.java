@@ -10,12 +10,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Dueño;
 
 /**
  *
@@ -46,10 +48,36 @@ public class srvController extends HttpServlet {
             
             
         }
-        if(request.getParameter("aghorario") != null){
+        if(request.getParameter("hagregar") != null){
             
+            Insert(conec,"Insert into Horario (entrada,salida,diasSemana) values('"+request.getParameter("hentrada")+"','"+request.getParameter("hsalida")+"','"+request.getParameter("hdias")+"')");
+            response.sendRedirect("agregarVeterinario.jsp?msg=Datos guardados");
             
         }
+        
+        if(request.getParameter("agduenio") != null){
+            response.sendRedirect("agregarDuenio.jsp");
+            
+        }
+        if(request.getParameter("dueagregar") != null){
+            Insert(conec,"insert into Dueño(cedula,nombre,apellido1,apellido2,direccion,telefonos) values('"+request.getParameter("duecedula")+"','"+request.getParameter("duenombre")+"','"+request.getParameter("dueapll1")+"','"+request.getParameter("dueapll2")
+                                +"','"+request.getParameter("duedirec")+"','"+request.getParameter("duetelefonos")+"')");
+            
+            response.sendRedirect("agregarMascota.jsp");
+            
+        }
+        if(request.getParameter("magregar") != null){
+            ConsultaDuenios duenios = new ConsultaDuenios();
+            Integer iddue = duenios.obtenerId(conec, request.getParameter("duenombre"));
+            
+            Insert(conec,"");
+            
+            Insert(conec,"insert into mascota(tipoMascota, nombre, fechaNacimiento, Expediente_idExpediente,Dueño_idDueño)");
+            response.sendRedirect("index.jsp");
+            
+        }
+        
+        
         conec.con.close();
        
         

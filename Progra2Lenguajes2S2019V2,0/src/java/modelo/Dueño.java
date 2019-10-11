@@ -12,7 +12,9 @@ import java.util.List;
  * @author alece
  */
 public class Dueño extends Usuario implements GenerarInforme{
+
     
+    private Integer dueId;
     private List<Mascota> mascotas;
     private List<Factura> facturas;
 
@@ -21,15 +23,22 @@ public class Dueño extends Usuario implements GenerarInforme{
     }
     
     
-    public Dueño(int cedula, String nombre, String apellido1, String apellido2, 
+    public Dueño(int id,int cedula, String nombre, String apellido1, String apellido2, 
             String direccion, List<Integer> telefonos, List<Mascota> mascotas, 
             List<Factura> facturas) {
         
         super(cedula, nombre, apellido1, apellido2, direccion, telefonos);
+        this.dueId = id;
         this.facturas = facturas;
         this.mascotas = mascotas;
     }
-    
+    public Integer getDueId() {
+        return dueId;
+    }
+
+    public void setDueId(Integer dueId) {
+        this.dueId = dueId;
+    }
     public List<Mascota> getMascotas() {
         return mascotas;
     }
